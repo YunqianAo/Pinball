@@ -22,7 +22,7 @@ bool ModuleSceneIntro::Start()
 {
 	LOG("Loading Intro assets");
 	bool ret = true;
-	bgTexture = App->textures->Load("pinball/Pokemon.png");
+	bgTexture = App->textures->Load("pinball/fondo.png");
 	
 	App->renderer->camera.x = App->renderer->camera.y = 0;
 
