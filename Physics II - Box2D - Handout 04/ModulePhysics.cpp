@@ -46,13 +46,71 @@ bool ModulePhysics::Start()
 
 	b2Body* big_ball = world->CreateBody(&body);
 
-	b2CircleShape shape;
+	b2ChainShape shape;
 	shape.m_radius = PIXEL_TO_METERS(diameter) * 0.5f;
 
 	b2FixtureDef fixture;
 	fixture.shape = &shape;
 	big_ball->CreateFixture(&fixture);
-
+	int fondo[] = {
+			1，1,
+            1，430,
+100，430,
+100，427,
+40，390,
+40，405,
+22，405,
+22，320,
+40，320,
+40，295,
+30，280,
+20，260,
+15，240,
+10，210,
+10，190,
+10，145,
+15，115,
+20，95,
+30，80,
+50，60,
+70，50,
+85，45,
+95，40,
+120，30,
+145，25,
+165，25,
+225，25,
+235，30,
+245，40,
+252，60,
+252，415,
+235，415,
+235，70,
+220，50,
+200，50,
+175，45,
+130，50,
+155，70,
+175，75,
+190，85,
+205，100,
+220，120,
+230，145,
+225，220,
+220，255,
+205，280,
+195，293,
+195，320,
+220，315,
+220，405,
+200，405,
+200，390,
+140，425,
+140，430,
+255，430,
+255，1,
+	};
+	fondo.add(App->physics->CreateChain2(App->input->GetMouseX(), App->input->GetMouseY(), body, 64));
 	return true;
 }
 
@@ -184,7 +242,39 @@ PhysBody* ModulePhysics::CreateChain(int x, int y, int* points, int size)
 
 	return pbody;
 }
+PhysBody* ModulePhysics::CreateChain2(int x, int y, int* points, int size)
+{
+	b2BodyDef body;
+	body.type = b2_staticBody;
+	body.position.Set(PIXEL_TO_METERS(x), PIXEL_TO_METERS(y));
 
+	b2Body* b = world->CreateBody(&body);
+
+	b2ChainShape shape;
+	b2Vec2* p = new b2Vec2[size / 2];
+
+	for (uint i = 0; i < size / 2; ++i)
+	{
+		p[i].x = PIXEL_TO_METERS(points[i * 2 + 0]);
+		p[i].y = PIXEL_TO_METERS(points[i * 2 + 1]);
+	}
+
+	shape.CreateLoop(p, size / 2);
+
+	b2FixtureDef fixture;
+	fixture.shape = &shape;
+
+	b->CreateFixture(&fixture);
+
+	delete p;
+
+	PhysBody* pbody = new PhysBody();
+	pbody->body = b;
+	b->SetUserData(pbody);
+	pbody->width = pbody->height = 0;
+
+	return pbody;
+}
 // 
 update_status ModulePhysics::PostUpdate()
 {
