@@ -25,6 +25,8 @@ public:
 	PhysBody* sensor;
 	bool sensed;
 
+	//Textures
+	SDL_Texture* propeller;
 	SDL_Texture* circle;
 	SDL_Texture* box;
 	SDL_Texture* rick;
