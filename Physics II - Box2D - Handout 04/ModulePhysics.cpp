@@ -54,8 +54,8 @@ bool ModulePhysics::Start()
 	big_ball->CreateFixture(&fixture);
 
 	b2BodyDef body2;
-	body.type= b2_staticBody;
-	body.position.Set(PIXEL_TO_METERS(x), PIXEL_TO_METERS(y));
+	body2.type= b2_staticBody;
+	body2.position.Set(0,0);
 
 	b2Body* borde = world->CreateBody(&body2);
 
