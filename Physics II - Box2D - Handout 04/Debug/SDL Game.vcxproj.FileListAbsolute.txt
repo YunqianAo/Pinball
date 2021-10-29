@@ -1,4 +1,5 @@
 C:\Users\cesar\Desktop\SDL practica\Physics II - Box2D - Handout 04\Debug\2D Physics - class 4.exe
 C:\Users\cesar\Desktop\Pinball\Physics II - Box2D - Handout 04\Debug\2D Physics - class 4.exe
 C:\Users\miguelrt2\Desktop\Pinball - copia\Physics II - Box2D - Handout 04\Debug\2D Physics - class 4.exe
-C:\Users\yunqiana\Documents\GitHub\Pinball\Physics II - Box2D - Handout 04\Debug\2D Physics - class 4.exe
+C:\Users\Usuario\Desktop\Pinball - copia\Physics II - Box2D - Handout 04\Debug\2D Physics - class 4.exe
+C:\Users\Usuario\Desktop\Pinball - copia\Physics II - Box2D - Handout 04\Debug\2D Physics - class 4.pdb

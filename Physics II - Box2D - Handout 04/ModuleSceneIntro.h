@@ -26,7 +26,7 @@ public:
 	bool sensed;
 
 	//Textures
-	SDL_Texture* propeller;
+	SDL_Texture* spoink;
 	SDL_Texture* circle;
 	SDL_Texture* box;
 	SDL_Texture* rick;

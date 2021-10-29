@@ -27,7 +27,7 @@ bool ModuleSceneIntro::Start()
 	App->renderer->camera.x = App->renderer->camera.y = 0;
 
 	//Load textures
-	propeller = App->textures->Load("pinball/wheel.png");
+	spoink = App->textures->Load("pinball/wheel.png");
 	circle = App->textures->Load("pinball/wheel.png"); 
 	box = App->textures->Load("pinball/crate.png");
 	rick = App->textures->Load("pinball/rick_head.png");
